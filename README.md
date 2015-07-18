@@ -3,7 +3,7 @@
 This is an example of a chat application using Go and websockets.
 
 # Configuration Files
-------------------------
+
 The Godeps folder contains dependency management files for deploying to Heroku.
 Procfile is a configuration file for deploying to Herkou
 
@@ -11,8 +11,8 @@ If you deploy to Google App Engine you'll have to add an *app.yaml* file and del
 
 The *.project* file enables you to open this project in Eclipse ( make sure you have the Goclipse plugin ). Otherwise, it's yet another config file, you can delete it if you'd like.
 
-# Running Locally - Terminal
-------------------------
+# Run Locally - Terminal
+
 0) have Go installed: https://golang.org
 
 1) set the GOPATH environment variable to the root directory of this project. Of course if you have other GOPATH routes just add
@@ -40,7 +40,6 @@ The application should be running and listening to port 8081
 If you are deploying the apllication, change the websocket address/port in the *html/client.html* file.
 
 # Deploy - Heroku:
--------------------------
 
 0) Have a heroku account (don't worry, it's free for your first few applications)
 
