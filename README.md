@@ -1,5 +1,5 @@
 # golang_chat_example
-------------------------
+
 This is an example of a chat application using Go and websockets.
 
 # Configuration Files
