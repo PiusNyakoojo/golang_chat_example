@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title>Chat Example</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+
+<div id='panel'>
+	<div id='chatarea'>
+		<ul id='messages'></ul>
+	</div>
+	
+	<input id='textarea' type='text' placeholder='Type Here..'>
+	<input id='sendbutton' type='image' src='../images/send.png' onclick='send()'>
+</div>
+<body>
+
+	<script>
+		
+		var addr = "localhost:8081";
+		//var pubAddr = "tranquil-gorge-4724.herokuapp.com"
+
+		var conn = new WebSocket("wss://" + addr + "/ws");
+		
+		var textArea = document.getElementById('textarea');
+		var chatArea = document.getElementById('chatarea');
+		var messages = document.getElementById('messages');
+
+		conn.onopen = function(e) {
+			var node = document.createElement('p');
+			node.innerHTML = "Connected"
+			document.body.appendChild( node );
+			
+			/* Uncomment this if deploying to Heroku.
+			setInterval( function() {
+				conn.send( "Keep connection alive!" ); // ping server every 30000 milliseconds = 30 seconds to prevent disconnection
+			}, 30000 );
+			*/
+			
+		};
+
+		conn.onclose = function(e) {
+			var node = document.createElement('p');
+			node.innerHTML = "Disconnected: " + e.code + "; " + e.reason;
+			document.body.appendChild( node );
+		};
+
+		conn.onmessage = function(e) {
+			var temp = document.createElement('li');
+			var obj = JSON.parse(e.data);
+			
+			temp.innerHTML = obj.Text;
+			temp.style.color = obj.Color;
+			messages.appendChild( temp );
+			
+			chatArea.scrollTop = chatArea.scrollHeight;
+		};
+
+		var send = function() {
+			if ( textArea.value.length > 0 ){
+				conn.send( textArea.value );
+				textArea.value = '';
+			}
+		};
+		
+		textArea.onkeyup = function (e) {
+		    if (e.keyCode == 13)
+		        send();
+		}
+
+	</script>
+</body>
+</html>
