@@ -13,9 +13,9 @@ The *.project* file enables you to open this project in Eclipse ( make sure you 
 
 # Run Locally - Terminal
 
-0) have Go installed: https://golang.org
+0) Have Go installed: https://golang.org
 
-1) set the GOPATH environment variable to the root directory of this project. Of course if you have other GOPATH routes just add
+1) Set the GOPATH environment variable to the root directory of this project. Of course if you have other GOPATH routes just add
 
 ```
 ;C:\Users\YourName\Desktop\golang_chat_example
@@ -23,13 +23,13 @@ The *.project* file enables you to open this project in Eclipse ( make sure you 
 
 to the end of the value. Of course this is if you clone this repository to your Desktop :)
 
-2) open terminal and change directory to ne root of the project
+2) Open terminal and change directory to ne root of the project
 
 ```
 cd Desktop/golang_chat_example
 ```
 
-3) open git bash terminal and enter:
+3) Open git bash terminal and enter:
 
 ```
 go run src/server/server.go
@@ -41,7 +41,7 @@ If you are deploying the apllication, change the websocket address/port in the *
 
 # Deploy - Heroku:
 
-0) Have a heroku account (don't worry, it's free for your first few applications)
+0) Have a heroku account (don't worry, it's free for your first few applications): https://heroku.com/
 
 1) If this is your firt time using Heroku, get the toolbelt: https://toolbelt.heroku.com/ and after installation, open the git bash terminal and enter the following commands:
 
@@ -76,7 +76,7 @@ var conn = new Websocket("wss://" +  pubAddr + "/ws");
 5) Finally deploy!! In the git bash terminal enter the following commands:
 
 ```
-git add -A.
+git add -A .
 git commit -m "changed websocket address"
 git push heroku master
 ```
