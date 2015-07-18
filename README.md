@@ -1,15 +1,16 @@
 # golang_chat_example
 
-This is an example of a chat application using Go and websockets.
+This is an example of a realtime chat application using Go and websockets.
 
 # Configuration Files
 
-The Godeps folder contains dependency management files for deploying to Heroku.
-Procfile is a configuration file for deploying to Herkou
+The *Godeps* folder contains dependency management files for deploying to Heroku.
+
+*Procfile* is a configuration file for deploying to Herkou.
 
 If you deploy to Google App Engine you'll have to add an *app.yaml* file and delete the aforementioned config files.
 
-The *.project* file enables you to open this project in Eclipse ( make sure you have the Goclipse plugin ). Otherwise, it's yet another config file, you can delete it if you'd like.
+The *.project* file enables you to open this project in Eclipse ( make sure you have the Goclipse plugin ). Otherwise, it's yet another config file. You can delete it if you'd like.
 
 # Run Locally - Terminal
 
@@ -23,13 +24,13 @@ The *.project* file enables you to open this project in Eclipse ( make sure you 
 
 to the end of the value. Of course this is if you clone this repository to your Desktop :)
 
-2) Open terminal and change directory to ne root of the project
+2) Open git bash terminal and change directory to be root of the project
 
 ```
 cd Desktop/golang_chat_example
 ```
 
-3) Open git bash terminal and enter:
+3) In the same terminal enter the command:
 
 ```
 go run src/server/server.go
@@ -37,7 +38,7 @@ go run src/server/server.go
 
 The application should be running and listening to port 8081
 
-If you are deploying the apllication, change the websocket address/port in the *html/client.html* file.
+If you are deploying the application, change the websocket address/port in the *html/client.html* file.
 
 # Deploy - Heroku:
 
@@ -49,9 +50,9 @@ If you are deploying the apllication, change the websocket address/port in the *
 heroku login
 ```
 
-Enter your information and continue to next step.
+Enter your information and continue to the next step.
 
-2) Enter the following commands in the root directory of the project:
+2) Enter the following commands while the root directory of the project:
 
 ```
 git init
@@ -71,7 +72,7 @@ var pubAddr = "application_name.herokuapp.com"
 var conn = new Websocket("wss://" +  pubAddr + "/ws");
 ```
 
-4) In the html/client.html file there is a section of code that's commented out.. Go ahead and uncomment that.
+4) In the *html/client.html* file there is a section of code that's commented out.. Go ahead and uncomment that.
 
 5) Finally deploy!! In the git bash terminal enter the following commands:
 
@@ -79,6 +80,11 @@ var conn = new Websocket("wss://" +  pubAddr + "/ws");
 git add -A .
 git commit -m "changed websocket address"
 git push heroku master
+```
+
+To open, just go to the URL provided -or- enter the command:
+```
+heroku open
 ```
 
 Enjoy!
