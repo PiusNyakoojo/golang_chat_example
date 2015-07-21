@@ -40,7 +40,7 @@ The application should be running and listening to port 8081
 
 If you are deploying the application, change the websocket address/port in the *html/client.html* file.
 
-# Deploy - Heroku:
+# Deploy - Heroku
 
 0) Have a heroku account (don't worry, it's free for your first few applications): https://heroku.com/
 
@@ -52,7 +52,7 @@ heroku login
 
 Enter your information and continue to the next step.
 
-2) Enter the following commands while the root directory of the project:
+2) Enter the following commands while in the root directory of the project:
 
 ```
 git init
